@@ -127,7 +127,8 @@ function BubbleChart(sample) {
 
     // Using D3 to retrieve all data
     d3.json(URL).then((data) => {
-        
+        console.log("line 130")
+        console.log(data)
         // Retrieve all sample data
         let sampleInfo = data.samples;
 
@@ -176,15 +177,14 @@ function BubbleChart(sample) {
     
     function optionChanged(newsample){
 
-    chart(newsample);
 
      // Log the new value
-     console.log(value); 
+     console.log(newsample); 
 
      // Call all functions 
-     metaData(value);
-     chart(value);
-     BubbleChart(value);
+     metaData(newsample);
+     chart(newsample);
+     BubbleChart(newsample);
 
 
     }
